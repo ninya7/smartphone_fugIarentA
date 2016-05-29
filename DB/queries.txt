@@ -1,0 +1,23 @@
+INSERT INTO `user` (`idUser`, `Vorname`, `Nachname`, `Email`, `Login`, `Password`, `RegistrierDatum`, `Admin`) VALUES (NULL, 'testVorname', 'testNachname', 'testmail@mail.de', 'test', 'test', CURRENT_TIMESTAMP, NULL);
+
+INSERT INTO `kategorie` (`idKategorie`, `Kategorie`) VALUES (NULL, 'Einsteiger'), (NULL, 'Mittelklasse'), (NULL, 'Profi');
+
+INSERT INTO `hersteller` (`idHersteller`, `Hersteller`) VALUES (NULL, 'Apple'), (NULL, 'Microsoft');
+
+INSERT INTO `funktypen` (`idFunktypen`, `Funktyp`) VALUES (NULL, '802.11ac'), (NULL, '802.11a');
+
+INSERT INTO `smartphone` (`idSmartphone`, `Kategorie_idKategorie`, `idHersteller`, `Bezeichnung`, `Betriebssystem`, `Prozessor`, `Sprechzeit`, `Gewicht`, `Displaygroesse`, `Megapixel`, `ErstellDatum`) VALUES (NULL, '3', '1', 'test bezeichnung', 'test OS', 'test prozessor', '8', '300', '3,5', '5,5', CURRENT_TIMESTAMP);
+
+INSERT INTO `smartphone_has_funktypen` (`Smartphone_idSmartphone`, `Funktypen_idFunktypen`) VALUES ('3', '1');
+
+INSERT INTO `bilder` (`idBilder`, `Pfad`) VALUES (NULL, './img/bildSmartphone1.jpg');
+
+INSERT INTO `bilder_has_smartphone` (`Bilder_idBilder`, `Smartphone_idSmartphone`) VALUES ('3', '3');
+
+INSERT INTO `bewertung` (`idBewertung`, `User_idUser`, `Smartphone_idSmartphone`, `Bewertungstext`, `Sterne`, `Hilfreich`, `ErstellDatum`) VALUES (NULL, '1', '3', 'test bewertungstext', '5', '4', CURRENT_TIMESTAMP), (NULL, '1', '3', 'zweiter test', '1', '8', CURRENT_TIMESTAMP);
+
+INSERT INTO `hersteller` (`idHersteller`, `Hersteller`) VALUES (NULL, 'Samsung'), (NULL, 'Nokia'), (NULL, 'HTC');
+
+INSERT INTO `smartphone` (`idSmartphone`, `Kategorie_idKategorie`, `Hersteller_idHersteller`, `Bezeichnung`, `Beschreibung`, `Betriebssystem`, `Prozessor`, `Sprechzeit`, `Gewicht`, `Displaygroesse`, `Megapixel`, `Preis`, `ErstellDatum`) VALUES (NULL, '4', '7', 'Z3', 'Super Zustand', 'Android', 'iOS', '5', '350', '3,5', '7,5', '100', CURRENT_TIMESTAMP), (NULL, '5', '1', 'IPHONE S6', 'Das neue IPHONE S6', 'iOS', 'Intel Penitum 3', '9', '400', '3,5', '8,9', '9000', CURRENT_TIMESTAMP);
+
+INSERT INTO `bewertungs_bewertung` (`idBewertungs_Bewertung`, `idBewertung`, `User_idUser`, `Smartphone_idSmartphone`, `Bewertungstext`, `Hilfreich`, `ErstellDatum`) VALUES (NULL, '1', '1', '3', 'bewertungs_tttt', '3', CURRENT_TIMESTAMP), (NULL, '2', '1', '3', 'bewertungs_zweiter', '1', CURRENT_TIMESTAMP);
